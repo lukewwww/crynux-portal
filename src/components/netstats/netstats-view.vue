@@ -2,6 +2,7 @@
 import {computed, onMounted, reactive, ref} from 'vue'
 import {Grid} from 'ant-design-vue'
 
+import config from '@/config.json'
 import networkAPI from '@/api/v1/network'
 import v2NetworkAPI from '@/api/v2/network'
 
@@ -130,12 +131,13 @@ onMounted(async () => {
     <a-row :class="topRowClasses"></a-row>
     <a-row :gutter="[16, 16]" style="margin-top: 16px; margin-bottom: 16px">
         <a-col :span="20" :offset="2">
-            <a-alert
-                type="warning"
-                show-icon
-                message="Crynux testnet will discontinue soon"
-                description="We are skipping the v2.8.0 release and moving directly into mainnet preparation. Thank you for supporting the incentivized testnet over the past two years. Please watch for upcoming announcements with mainnet details."
-            />
+            <a-alert type="warning" show-icon message="Crynux Testnet Sunnet">
+                <template #description>
+                    Crynux Testnet has been sunneted for the Mainnet launch. Please join our
+                    <a :href="config.social_links.discord" target="_blank" rel="noopener noreferrer">Discord</a>
+                    to get latest updates.
+                </template>
+            </a-alert>
         </a-col>
     </a-row>
     <a-row :gutter="[16, 16]">
