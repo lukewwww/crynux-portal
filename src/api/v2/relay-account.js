@@ -2,6 +2,10 @@ import BaseAPI from '../base-api'
 import v2 from './v2'
 
 class V2RelayAccountAPI extends BaseAPI {
+  getBalance(address) {
+    return v2.get(`/relay_account/${address}/balance`)
+  }
+
   getLockedVesting(address) {
     return v2.get(`/relay_account/${address}/vesting/locked`)
   }

@@ -809,7 +809,7 @@ const fetchRelayBalance = async () => {
         return
     }
     try {
-        const balanceInWei = await walletAPI.getRelayAccount(wallet.address)
+        const balanceInWei = await v2RelayAccountAPI.getBalance(wallet.address)
         relayBalance.value = parseFloat(ethers.formatEther(balanceInWei || '0'))
     } catch (e) {
         console.error(e)

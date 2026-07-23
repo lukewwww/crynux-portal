@@ -6,10 +6,6 @@ class WalletAPI extends BaseAPI {
 		return v1.post('/client/connect_wallet', payload)
 	}
 
-    getRelayAccount(address) {
-        return v1.get('/balance/' + address)
-    }
-
     getWithdrawals(address, page, pageSize) {
         return v1.get(`/relay_account/${address}/withdraw/list`, {
             params: {
