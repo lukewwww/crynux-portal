@@ -1649,7 +1649,7 @@ watch(() => [wallet.address, wallet.selectedOnChainWalletNetworkKey, beneficialA
 						<a-typography-text type="secondary" style="font-size: 12px; margin-left: 6px;">(includes fee {{ withdrawalFeeText }} CNX)</a-typography-text>
 					</template>
 				</a-statistic>
-				<div v-if="isAmountFieldValid && feeFormulaText" style="display: inline-flex; align-items: center; margin-top: 4px;">
+				<div v-if="isAmountFieldValid && feeFormulaText && currentFeeRatio > 0" style="display: inline-flex; align-items: center; margin-top: 4px;">
 					<a-typography-text type="danger" style="font-size: 12px;">{{ feeFormulaText }}</a-typography-text>
 					<a-tooltip placement="right" :overlay-style="{ maxWidth: '420px' }">
 						<template #title>
