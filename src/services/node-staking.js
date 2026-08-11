@@ -48,7 +48,6 @@ export const StakingStatus = {
  * @typedef {Object} StakingInfo
  * @property {string} nodeAddress - The node address
  * @property {bigint} stakedBalance - The staked CNX balance
- * @property {bigint} stakedCredits - The staked credits
  * @property {number} status - The staking status (0=Unstaked, 1=Staked, 2=PendingUnstake)
  * @property {bigint} unstakeTimestamp - Timestamp when tryUnstake was called
  */
@@ -65,9 +64,8 @@ export async function getStakingInfo(networkKey, nodeAddress) {
   return {
     nodeAddress: res.nodeAddress ?? res[0] ?? '',
     stakedBalance: toBigInt(res.stakedBalance ?? res[1] ?? 0n),
-    stakedCredits: toBigInt(res.stakedCredits ?? res[2] ?? 0n),
-    status: Number(res.status ?? res[3] ?? 0),
-    unstakeTimestamp: toBigInt(res.unstakeTimestamp ?? res[4] ?? 0n)
+    status: Number(res.status ?? res[2] ?? 0),
+    unstakeTimestamp: toBigInt(res.unstakeTimestamp ?? res[3] ?? 0n)
   }
 }
 

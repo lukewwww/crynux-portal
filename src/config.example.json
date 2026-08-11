@@ -16,7 +16,6 @@
                 "https://cnxscan.base.crynux.io"
             ],
             "contracts": {
-                "credits": "0xE474ecE312b79fDF833C76C0d8255fA688068e4a",
                 "beneficialAddress": "0x7c8861a639B712D486eFB2C944419F7531700db0",
                 "delegatedStaking": "0xAbCa3C0a800569c05e87E500306dFf9b8Ba21821",
                 "nodeStaking": "0x31609b6531399561c2B65b8673a17FE2575c1654"

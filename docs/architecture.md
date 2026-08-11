@@ -60,8 +60,7 @@ src/
 ├── abi/                    # Smart contract ABIs
 │   ├── delegated-staking.json
 │   ├── node-staking.json
-│   ├── beneficial-address.json
-│   └── credits.json
+│   └── beneficial-address.json
 └── config.json            # Network & contract configuration
 ```
 
