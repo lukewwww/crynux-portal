@@ -4,6 +4,7 @@ import StakeableNodes from '@/components/staking/stakeable-nodes.vue'
 import Dashboard from '@/components/dashboard/the-dashboard.vue'
 import RelayAccount from '@/components/dashboard/relay-account/relay-account.vue'
 import DelegatedStaking from '@/components/dashboard/delegated-staking/delegated-staking.vue'
+import LegacyStaking from '@/components/dashboard/legacy-staking/legacy-staking.vue'
 import QosDiagnose from '@/components/dashboard/qos-diagnose/qos-diagnose.vue'
 import NodeDetails from '@/components/staking/node-details.vue'
 import { useAuthStore } from '@/stores/auth'
@@ -42,6 +43,11 @@ const router = createRouter({
           path: 'delegated-staking',
           name: 'delegated-staking',
           component: DelegatedStaking
+        },
+        {
+          path: 'legacy-staking',
+          name: 'legacy-staking',
+          component: LegacyStaking
         },
         {
           path: 'qos-diagnose',

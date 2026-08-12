@@ -2,6 +2,10 @@ import config from '@/config.json'
 
 export const getSystemNetworks = () => config.system_networks || config.networks || {}
 
+export const getLegacyStakingNetworks = () => Object.fromEntries(
+  Object.entries(getSystemNetworks()).filter(([, network]) => network.legacyStakingContracts)
+)
+
 export const getDepositWithdrawOnlyNetworks = () => Object.fromEntries(
   Object.entries(config.deposit_withdraw_networks || {}).map(([key, network]) => [
     key,
