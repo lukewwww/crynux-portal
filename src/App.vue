@@ -214,13 +214,13 @@ onMounted(async () => {
                                 <template #icon><DollarOutlined /></template>
                                 Delegated Stakes
                               </a-menu-item>
-                              <a-menu-item v-if="hasLegacyStaking" key="legacy-staking" @click="router.push({ name: 'legacy-staking' })">
-                                <template #icon><HistoryOutlined /></template>
-                                Legacy Staking
-                              </a-menu-item>
                               <a-menu-item key="qos-diagnose" @click="router.push({ name: 'qos-diagnose' })">
                                 <template #icon><ExperimentOutlined /></template>
                                 QoS Diagnostics
+                              </a-menu-item>
+                              <a-menu-item v-if="hasLegacyStaking" key="legacy-staking" @click="router.push({ name: 'legacy-staking' })">
+                                <template #icon><HistoryOutlined /></template>
+                                Legacy Staking
                               </a-menu-item>
                               <a-menu-divider style="margin: 10px 0" />
                               <a-menu-item key="signout" @click="confirmSignOut">
@@ -299,6 +299,13 @@ onMounted(async () => {
                 @click="router.push({ name: 'delegated-staking' }); mobileMenuOpen = false"
               >Delegated Stakes</a-button>
               <a-button
+                type="text"
+                block
+                class="drawer-nav-btn"
+                :class="{ active: router.currentRoute.value.name === 'qos-diagnose' }"
+                @click="router.push({ name: 'qos-diagnose' }); mobileMenuOpen = false"
+              >QoS Diagnostics</a-button>
+              <a-button
                 v-if="hasLegacyStaking"
                 type="text"
                 block
@@ -306,13 +313,6 @@ onMounted(async () => {
                 :class="{ active: router.currentRoute.value.name === 'legacy-staking' }"
                 @click="router.push({ name: 'legacy-staking' }); mobileMenuOpen = false"
               >Legacy Staking</a-button>
-              <a-button
-                type="text"
-                block
-                class="drawer-nav-btn"
-                :class="{ active: router.currentRoute.value.name === 'qos-diagnose' }"
-                @click="router.push({ name: 'qos-diagnose' }); mobileMenuOpen = false"
-              >QoS Diagnostics</a-button>
             </template>
             <div class="drawer-separator"></div>
             <template v-if="auth.isAuthenticated">

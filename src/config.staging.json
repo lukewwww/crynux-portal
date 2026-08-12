@@ -1,6 +1,6 @@
 {
     "relay_url": "https://staging.relay.crynux.io",
-    "networks": {
+    "system_networks": {
         "crynux-on-base-sepolia": {
             "chainId": "188962142",
             "chainName": "Crynux on Base Sepolia",
@@ -14,17 +14,48 @@
             },
             "blockExplorerUrls": [],
             "contracts": {
+                "beneficialAddress": "0xE9951EF689BF3668f7e3026D0F8325D51F3fD010",
+                "delegatedStaking": "0x7FAaB0A41d92CfAf0d65960D93517d0F8df5D27A",
+                "nodeStaking": "0x79adCF045FA5929D0570CEa025dD5509bbb31d23"
+            },
+            "legacyStakingContracts": {
+                "abiProfile": "legacy-v1",
                 "beneficialAddress": "0xFc80e019d00f0d06CbebdE648990A89c5a25B425",
                 "delegatedStaking": "0x8f31Ff3Ac3923442eAbA765e3422848d25FA2496",
                 "nodeStaking": "0xAE0DDF6cf595F1EACfA76e35D985357E69795712"
             },
+            "deposit_min": 1000,
+            "logo": "/base-square.png",
+            "color": "purple"
+        }
+    },
+    "deposit_withdraw_networks": {
+        "base-sepolia": {
+            "chainId": "84532",
+            "chainName": "Base Sepolia",
+            "rpcUrls": [
+                "https://sepolia.base.org"
+            ],
+            "nativeCurrency": {
+                "name": "Ether",
+                "symbol": "ETH",
+                "decimals": 18
+            },
+            "blockExplorerUrls": [
+                "https://sepolia.basescan.org"
+            ],
+            "contracts": {
+                "beneficialAddress": "0x22083fA234Cf2a22801527aCD6bFF158e14614f2",
+                "tokenAddress": "0x29d09B6778A40C71A1f75c64bc08e4b325e97e54"
+            },
+            "token_type": "erc20",
+            "deposit_min": 1000,
             "logo": "/base-square.png",
             "color": "purple"
         }
     },
     "default_network": "crynux-on-base-sepolia",
     "deposit_address": "0x7bB0A0582893c09ED48397BFACDdbbd478eB4839",
-    "deposit_min": 1000,
     "social_links": {
         "twitter": "https://x.com/crynuxio",
         "discord": "https://discord.gg/Ug2AHUbrrm",
