@@ -3,11 +3,6 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "creditsContract",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
         "name": "benefitAddressContract",
         "type": "address"
       },
@@ -43,6 +38,73 @@
     "type": "error"
   },
   {
+    "inputs": [],
+    "name": "OwnershipRenouncementDisabled",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ReentrancyGuardReentrantCall",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "oldAddress",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newAddress",
+        "type": "address"
+      }
+    ],
+    "name": "AdminAddressUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "oldDelay",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "newDelay",
+        "type": "uint256"
+      }
+    ],
+    "name": "ForceUnstakeDelayUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "oldAmount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "newAmount",
+        "type": "uint256"
+      }
+    ],
+    "name": "MinStakeAmountUpdated",
+    "type": "event"
+  },
+  {
     "anonymous": false,
     "inputs": [
       {
@@ -55,12 +117,6 @@
         "indexed": false,
         "internalType": "uint256",
         "name": "stakedBalance",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "stakedCredits",
         "type": "uint256"
       }
     ],
@@ -80,12 +136,6 @@
         "indexed": false,
         "internalType": "uint256",
         "name": "stakedBalance",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "stakedCredits",
         "type": "uint256"
       }
     ],
@@ -119,15 +169,28 @@
         "internalType": "uint256",
         "name": "stakedBalance",
         "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "stakedCredits",
-        "type": "uint256"
       }
     ],
     "name": "NodeUnstaked",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "oldObserver",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newObserver",
+        "type": "address"
+      }
+    ],
+    "name": "ObserverUpdated",
     "type": "event"
   },
   {
@@ -150,17 +213,17 @@
     "type": "event"
   },
   {
-    "anonymous": false,
-    "inputs": [
+    "inputs": [],
+    "name": "ba",
+    "outputs": [
       {
-        "indexed": true,
-        "internalType": "address",
-        "name": "parameterControllerAddress",
+        "internalType": "contract BenefitAddress",
+        "name": "",
         "type": "address"
       }
     ],
-    "name": "ParameterControllerUpdated",
-    "type": "event"
+    "stateMutability": "view",
+    "type": "function"
   },
   {
     "inputs": [],
@@ -242,11 +305,6 @@
             "type": "uint256"
           },
           {
-            "internalType": "uint256",
-            "name": "stakedCredits",
-            "type": "uint256"
-          },
-          {
             "internalType": "enum NodeStaking.StakingStatus",
             "name": "status",
             "type": "uint8"
@@ -282,7 +340,7 @@
     "inputs": [],
     "name": "renounceOwnership",
     "outputs": [],
-    "stateMutability": "nonpayable",
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -332,9 +390,22 @@
         "type": "address"
       }
     ],
-    "name": "setParameterController",
+    "name": "setObserver",
     "outputs": [],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "slashReceiver",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {
