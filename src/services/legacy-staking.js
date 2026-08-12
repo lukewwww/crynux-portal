@@ -48,12 +48,12 @@ export async function getLegacyNodeStakingInfo(networkKey, legacyContracts, wall
     contracts.beneficialAddress.getBenefitAddress(walletAddress)
   ])
   return {
-    nodeAddress: stakingInfo.nodeAddress ?? stakingInfo[0],
+    nodeAddress: walletAddress,
     stakedBalance: toBigInt(stakingInfo.stakedBalance ?? stakingInfo[1] ?? 0n),
     status: Number(stakingInfo.status ?? stakingInfo[3] ?? 0),
     unstakeTimestamp: toBigInt(stakingInfo.unstakeTimestamp ?? stakingInfo[4] ?? 0n),
     forceUnstakeDelay: toBigInt(forceUnstakeDelay),
-    refundAddress: isZeroAddress(benefitAddress) ? walletAddress : benefitAddress
+    benefitAddress: isZeroAddress(benefitAddress) ? '' : benefitAddress
   }
 }
 
